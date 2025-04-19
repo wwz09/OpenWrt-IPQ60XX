@@ -10,8 +10,8 @@ env:
   REPO_URL: https://github.com/VIKINGYFY/immortalwrt.git
   #REPO_BRANCH: kernel-6.12
   REPO_BRANCH: main
-  CONFIG1: configs/IPQ60XX-WIFI-YES.txt
-  CONFIG2: configs/GENERAL.txt
+  CONFIG1: Config/IPQ60XX-WIFI-YES.txt
+  CONFIG2: Config/GENERAL.txt
   DIY_P1_SH: Scripts/Packages.sh
   DIY_P2_SH: Scripts/Handles.sh
   DIY_P3_SH: Scripts/Settings.sh
@@ -98,9 +98,9 @@ jobs:
   
     - name: Load Custom Configuration(加载自定义配置)
       run: |
-        # cat  $GITHUB_WORKSPACE/$CONFIG1 $GITHUB_WORKSPACE/$CONFIG2 >> .config
-        [ -e $CONFIG1 ] && mv $CONFIG1 $OPENWRT_PATH/.config
-        [ -e $CONFIG2 ] && mv $CONFIG2 $OPENWRT_PATH/.config
+        cat  $GITHUB_WORKSPACE/$CONFIG1 $GITHUB_WORKSPACE/$CONFIG2 >> .config
+        # [ -e $CONFIG1 ] && mv $CONFIG1 $OPENWRT_PATH/.config
+        # [ -e $CONFIG2 ] && mv $CONFIG2 $OPENWRT_PATH/.config
 
     - name: Download DL Package(下载DL软件包)
       run: |
