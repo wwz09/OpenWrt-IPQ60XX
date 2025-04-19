@@ -88,7 +88,7 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         
-     - name: DIY执行脚本
+    - name: DIY执行脚本
       run: |
         chmod +x $DIY_P1_SH
         chmod +x $DIY_P2_SH
