@@ -95,8 +95,8 @@ CONFIG_PACKAGE_luci-proto-relay=y
 
 #IPv6 相关配置添加部分
 
-#CONFIG_PACKAGE_luci-app-ipv6=n
-#CONFIG_PACKAGE_luci-proto-ipv6=n
+CONFIG_PACKAGE_luci-app-ipv6=y
+CONFIG_PACKAGE_luci-proto-ipv6=y
 CONFIG_PACKAGE_ip6tables=y
 CONFIG_PACKAGE_dnsmasq-full=y
 CONFIG_PACKAGE_odhcpd-ipv6only=y
