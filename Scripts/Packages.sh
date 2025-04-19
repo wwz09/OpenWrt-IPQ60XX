@@ -109,6 +109,8 @@ UPDATE_VERSION() {
 	done
 }
 
+rm -rf package/modem_feeds/luci/luci-app-qmodem
+
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
   branch="$1" repourl="$2" && shift 2
