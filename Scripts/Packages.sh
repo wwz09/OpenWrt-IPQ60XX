@@ -109,6 +109,23 @@ UPDATE_VERSION() {
 	done
 }
 
+# Git稀疏克隆，只克隆指定目录到本地
+function git_sparse_clone() {
+  branch="$1" repourl="$2" && shift 2
+  git clone --depth=1 -b $branch --single-branch --filter=blob:none --sparse $repourl
+  repodir=$(echo $repourl | awk -F '/' '{print $(NF)}')
+  cd $repodir && git sparse-checkout set $@
+  mv -f $@ ../package
+  cd .. && rm -rf $repodir
+}
+
+
+## 添加额外插件
+
+#git_sparse_clone main https://github.com/wwz09/mzwrt_package_Lite luci-app-control-timewol luci-app-control-webrestriction luci-app-control-weburl luci-app-filebrowser  luci-app-vlmcsd   
+#git_sparse_clone main https://github.com/wwz09/mzwrt_package_Lite filebrowser luci-theme-argon luci-app-argon-config luci-theme-design
+git_sparse_clone main https://github.com/chenmozhijin/luci-app-socat luci-app-socat
+
 #UPDATE_VERSION "软件包名" "测试版，true，可选，默认为否"
 UPDATE_VERSION "sing-box"
 UPDATE_VERSION "tailscale"
