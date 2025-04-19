@@ -53,7 +53,7 @@ UPDATE_PACKAGE "nikki" "nikkinikki-org/OpenWrt-nikki" "main"
 UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
 UPDATE_PACKAGE "passwall" "xiaorouji/openwrt-passwall" "main" "pkg"
 UPDATE_PACKAGE "passwall2" "xiaorouji/openwrt-passwall2" "main" "pkg"
-
+UPDATE_PACKAGE "socat" "chenmozhijin/luci-app-socat" "main" "pkg"
 UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
 
 UPDATE_PACKAGE "alist" "sbwml/luci-app-alist" "main"
@@ -124,9 +124,9 @@ function git_sparse_clone() {
 
 ## 添加额外插件
 
-#git_sparse_clone main https://github.com/wwz09/mzwrt_package_Lite luci-app-control-timewol luci-app-control-webrestriction luci-app-control-weburl luci-app-filebrowser  luci-app-vlmcsd   
-#git_sparse_clone main https://github.com/wwz09/mzwrt_package_Lite filebrowser luci-theme-argon luci-app-argon-config luci-theme-design
-git_sparse_clone main https://github.com/chenmozhijin/luci-app-socat luci-app-socat
+# git_sparse_clone main https://github.com/wwz09/mzwrt_package_Lite luci-app-control-timewol luci-app-control-webrestriction luci-app-control-weburl luci-app-filebrowser  luci-app-vlmcsd   
+# git_sparse_clone main https://github.com/wwz09/mzwrt_package_Lite filebrowser luci-theme-argon luci-app-argon-config luci-theme-design
+# git_sparse_clone main https://github.com/chenmozhijin/luci-app-socat luci-app-socat
 
 #UPDATE_VERSION "软件包名" "测试版，true，可选，默认为否"
 UPDATE_VERSION "sing-box"
