@@ -98,9 +98,9 @@ jobs:
   
     - name: Load Custom Configuration(加载自定义配置)
       run: |
-        cat $GITHUB_WORKSPACE/$CONFIG1 $GITHUB_WORKSPACE/$CONFIG2 >> .config
-        #[ -e $CONFIG1 ] && mv $CONFIG1 $OPENWRT_PATH/.config
-        #[ -e $CONFIG2 ] && mv $CONFIG2 $OPENWRT_PATH/.config
+        # cat  $GITHUB_WORKSPACE/$CONFIG1 $GITHUB_WORKSPACE/$CONFIG2 >> .config
+        [ -e $CONFIG1 ] && mv $CONFIG1 $OPENWRT_PATH/.config
+        [ -e $CONFIG2 ] && mv $CONFIG2 $OPENWRT_PATH/.config
 
     - name: Download DL Package(下载DL软件包)
       run: |
