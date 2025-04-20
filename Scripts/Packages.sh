@@ -131,7 +131,7 @@ function git_sparse_clone() {
 
 # git_sparse_clone main https://github.com/wwz09/mzwrt_package_Lite luci-app-control-timewol luci-app-control-weburl luci-app-lucky lucky  luci-app-socat 
 # git_sparse_clone main https://github.com/wwz09/mzwrt_package_Lite filebrowser luci-theme-argon luci-app-argon-config luci-theme-design
-git_sparse_clone main https://github.com/chenmozhijin/luci-app-socat luci-app-socat
+# git_sparse_clone main https://github.com/chenmozhijin/luci-app-socat luci-app-socat
 
 #UPDATE_VERSION "软件包名" "测试版，true，可选，默认为否"
 UPDATE_VERSION "sing-box"
