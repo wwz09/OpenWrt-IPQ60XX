@@ -53,7 +53,7 @@ UPDATE_PACKAGE "nikki" "nikkinikki-org/OpenWrt-nikki" "main"
 UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
 UPDATE_PACKAGE "passwall" "xiaorouji/openwrt-passwall" "main" "pkg"
 UPDATE_PACKAGE "passwall2" "xiaorouji/openwrt-passwall2" "main" "pkg"
-UPDATE_PACKAGE "luci-app-socat" "WROIATE/luci-app-socat" "main" 
+UPDATE_PACKAGE "luci-app-socat" "Lienol/openwrt-package" "main" "pkg"
 UPDATE_PACKAGE "luci-app-control-timewol" "wwz09/mzwrt_package_Lite" "main" "pkg"
 UPDATE_PACKAGE "luci-app-control-weburl" "wwz09/mzwrt_package_Lite" "main" "pkg"
 
