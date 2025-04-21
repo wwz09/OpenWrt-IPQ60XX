@@ -56,7 +56,8 @@ UPDATE_PACKAGE "passwall2" "xiaorouji/openwrt-passwall2" "main" "pkg"
 # UPDATE_PACKAGE "luci-app-socat" "Lienol/openwrt-package" "main" "pkg"
 UPDATE_PACKAGE "luci-app-control-timewol" "wwz09/mzwrt_package_Lite" "main" "pkg"
 UPDATE_PACKAGE "luci-app-control-weburl" "wwz09/mzwrt_package_Lite" "main" "pkg"
-UPDATE_PACKAGE "luci-app-timecontrol" "wwz09/mzwrt_package_Lite" "main" "pkg"
+UPDATE_PACKAGE "luci-app-control-weburl" "wwz09/mzwrt_package_Lite" "main" "pkg"
+UPDATE_PACKAGE "app-firewall4" "wwz09/mzwrt_package_Lite" "main" "pkg"
 
 
 
@@ -132,7 +133,7 @@ function git_sparse_clone() {
 
 # git_sparse_clone main https://github.com/wwz09/mzwrt_package_Lite luci-app-control-timewol luci-app-control-weburl luci-app-lucky lucky  luci-app-socat 
 # git_sparse_clone main https://github.com/wwz09/mzwrt_package_Lite filebrowser luci-theme-argon luci-app-argon-config luci-theme-design
-git_sparse_clone main https://github.com/oskarirauta/luci-podman applications/luci-app-firewall4 firewall4
+# git_sparse_clone main https://github.com/oskarirauta/luci-podman applications/luci-app-firewall4 firewall4
 
 #UPDATE_VERSION "软件包名" "测试版，true，可选，默认为否"
 UPDATE_VERSION "sing-box"
