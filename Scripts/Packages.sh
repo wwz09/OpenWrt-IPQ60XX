@@ -58,6 +58,7 @@ UPDATE_PACKAGE "luci-app-control-timewol" "wwz09/mzwrt_package_Lite" "main" "pkg
 UPDATE_PACKAGE "luci-app-control-weburl" "wwz09/mzwrt_package_Lite" "main" "pkg"
 UPDATE_PACKAGE "luci-app-control-weburl" "wwz09/mzwrt_package_Lite" "main" "pkg"
 UPDATE_PACKAGE "app-firewall4" "wwz09/mzwrt_package_Lite" "main" "pkg"
+UPDATE_PACKAGE "luci-app-firewall" "wwz09/mzwrt_package_Lite" "main" "pkg"
 
 
 
