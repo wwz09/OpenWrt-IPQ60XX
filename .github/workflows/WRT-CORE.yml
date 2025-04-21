@@ -96,7 +96,9 @@ jobs:
           git clone --depth=1 --single-branch --branch $WRT_BRANCH $WRT_REPO ./wrt/
           cd ./wrt
           sed -i 's/luci.git/luci.git;openwrt-21.02/g' feeds.conf.default
-           sed -i 's|https://github.com/immortalwrt/packages.git|https://github.com/immortalwrt/packages.git;openwrt-21.02|g' feeds.conf.default
+          sed -i 's|https://github.com/immortalwrt/packages.git|https://github.com/immortalwrt/packages.git;openwrt-21.02|g' feeds.conf.default
+          sed -i 's|https://github.com/openwrt/routing.git|https://github.com/openwrt/routing.git;openwrt-21.02|g' feeds.conf.default
+          sed -i 's|https://github.com/openwrt/telephony.git|https://github.com/openwrt/telephony.git;openwrt-21.02|g' feeds.conf.default
           cd ./wrt/ && echo "WRT_HASH=$(git log -1 --pretty=format:'%h')" >> $GITHUB_ENV
 
           # GitHub Action 移除国内下载源
