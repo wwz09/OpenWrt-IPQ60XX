@@ -57,7 +57,7 @@ UPDATE_PACKAGE "passwall2" "xiaorouji/openwrt-passwall2" "main" "pkg"
 UPDATE_PACKAGE "luci-app-control-timewol" "wwz09/mzwrt_package_Lite" "main" "pkg"
 UPDATE_PACKAGE "luci-app-control-weburl" "wwz09/mzwrt_package_Lite" "main" "pkg"
 UPDATE_PACKAGE "luci-app-control-weburl" "wwz09/mzwrt_package_Lite" "main" "pkg"
-# UPDATE_PACKAGE "luci-app-firewall4" "wwz09/mzwrt_package_Lite" "main" "pkg" "luci-app-firewall4 firewall4"
+UPDATE_PACKAGE "luci-app-firewall4" "wwz09/mzwrt_package_Lite" "main" "pkg" "luci-app-firewall4 firewall4"
 # UPDATE_PACKAGE "luci-app-firewall" "gxnas/ImmortalWrt-2410-Packages" "main" "pkg"
 
 
@@ -118,6 +118,7 @@ UPDATE_VERSION() {
 }
 
 rm -rf package/modem_feeds/luci/luci-app-qmodem
+rm -rf feeds/luci/applications/luci-app-firewall
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
@@ -135,7 +136,7 @@ function git_sparse_clone() {
 # git_sparse_clone main https://github.com/wwz09/mzwrt_package_Lite luci-app-control-timewol luci-app-control-weburl luci-app-lucky lucky  luci-app-socat 
 # git_sparse_clone main https://github.com/wwz09/mzwrt_package_Lite filebrowser luci-theme-argon luci-app-argon-config luci-theme-design
 # git_sparse_clone main https://github.com/oskarirauta/luci-podman applications/luci-app-firewall4 firewall4
-git_sparse_clone main https://github.com/gxnas/ImmortalWrt-2410-Packages luci-app-firewall
+# git_sparse_clone main https://github.com/gxnas/ImmortalWrt-2410-Packages luci-app-firewall
 
 #UPDATE_VERSION "软件包名" "测试版，true，可选，默认为否"
 UPDATE_VERSION "sing-box"
