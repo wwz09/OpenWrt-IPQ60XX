@@ -58,7 +58,7 @@ UPDATE_PACKAGE "luci-app-control-timewol" "wwz09/mzwrt_package_Lite" "main" "pkg
 UPDATE_PACKAGE "luci-app-control-weburl" "wwz09/mzwrt_package_Lite" "main" "pkg"
 UPDATE_PACKAGE "luci-app-control-weburl" "wwz09/mzwrt_package_Lite" "main" "pkg"
 UPDATE_PACKAGE "luci-app-firewall" "wwz09/mzwrt_package_Lite" "main" "pkg"
-# UPDATE_PACKAGE "luci-light" "wwz09/mzwrt_package_Lite" "main" "pkg"
+UPDATE_PACKAGE "luci" "wwz09/mzwrt_package_Lite" "main" "pkg"
 # UPDATE_PACKAGE "luci-nginx" "wwz09/mzwrt_package_Lite" "main" "pkg"
 # UPDATE_PACKAGE "luci-lib-docker" "wwz09/mzwrt_package_Lite" "main" "pkg"
 # UPDATE_PACKAGE "luci-ssl" "wwz09/mzwrt_package_Lite" "main" "pkg"
