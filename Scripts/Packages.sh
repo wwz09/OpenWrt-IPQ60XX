@@ -135,7 +135,7 @@ function git_sparse_clone() {
 
 # git_sparse_clone main https://github.com/wwz09/mzwrt_package_Lite luci-app-control-timewol luci-app-control-weburl luci-app-lucky lucky  luci-app-socat 
 # git_sparse_clone main https://github.com/wwz09/mzwrt_package_Lite filebrowser luci-theme-argon luci-app-argon-config luci-theme-design
-# git_sparse_clone main https://github.com/oskarirauta/luci-podman applications/luci-app-firewall4 firewall4
+git_sparse_clone openwrt-21.02 https://github.com/immortalwrt/luci applications/luci-app-firewall
 # git_sparse_clone main https://github.com/gxnas/ImmortalWrt-2410-Packages luci-app-firewall
 
 #UPDATE_VERSION "软件包名" "测试版，true，可选，默认为否"
