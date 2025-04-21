@@ -116,7 +116,7 @@ UPDATE_VERSION() {
 		fi
 	done
 }
-
+cd ./wrt
 rm -rf package/modem_feeds/luci/luci-app-qmodem
 rm -rf package/feeds/luci/luci-app-adbyby-plus
 rm -rf package/feeds/luci/luci-app-baidupcs-web
