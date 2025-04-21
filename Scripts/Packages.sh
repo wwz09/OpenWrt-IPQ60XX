@@ -57,8 +57,8 @@ UPDATE_PACKAGE "passwall2" "xiaorouji/openwrt-passwall2" "main" "pkg"
 UPDATE_PACKAGE "luci-app-control-timewol" "wwz09/mzwrt_package_Lite" "main" "pkg"
 UPDATE_PACKAGE "luci-app-control-weburl" "wwz09/mzwrt_package_Lite" "main" "pkg"
 UPDATE_PACKAGE "luci-app-control-weburl" "wwz09/mzwrt_package_Lite" "main" "pkg"
-UPDATE_PACKAGE "app-firewall4" "wwz09/mzwrt_package_Lite" "main" "pkg"
-UPDATE_PACKAGE "luci-app-firewall" "wwz09/mzwrt_package_Lite" "main" "pkg"
+UPDATE_PACKAGE "luci-app-firewall4" "wwz09/mzwrt_package_Lite" "main" "pkg" "luci-app-firewall4 firewall4"
+# UPDATE_PACKAGE "luci-app-firewall" "wwz09/mzwrt_package_Lite" "main" "pkg"
 
 
 
