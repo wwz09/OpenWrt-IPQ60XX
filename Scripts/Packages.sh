@@ -56,9 +56,9 @@ UPDATE_PACKAGE "passwall2" "xiaorouji/openwrt-passwall2" "main" "pkg"
 # UPDATE_PACKAGE "luci-app-socat" "Lienol/openwrt-package" "main" "pkg"
 UPDATE_PACKAGE "luci-app-control-timewol" "wwz09/mzwrt_package_Lite" "main" "pkg"
 UPDATE_PACKAGE "luci-app-control-weburl" "wwz09/mzwrt_package_Lite" "main" "pkg"
-UPDATE_PACKAGE "luci-app-control-weburl" "wwz09/mzwrt_package_Lite" "main" "pkg"
-# UPDATE_PACKAGE "luci-app-firewall4" "wwz09/mzwrt_package_Lite" "main" "pkg" "luci-app-firewall4 firewall4"
-# UPDATE_PACKAGE "luci-app-firewall" "gxnas/ImmortalWrt-2410-Packages" "main" "pkg"
+UPDATE_PACKAGE "luci-app-control-webrestriction" "wwz09/mzwrt_package_Lite" "main" "pkg"
+UPDATE_PACKAGE "luci-app-timecontrol" "wwz09/mzwrt_package_Lite" "main" "pkg"
+
 
 
 
@@ -116,28 +116,7 @@ UPDATE_VERSION() {
 		fi
 	done
 }
-cd ./wrt
-rm -rf package/modem_feeds/luci/luci-app-qmodem
-rm -rf package/feeds/luci/luci-app-adbyby-plus
-rm -rf package/feeds/luci/luci-app-baidupcs-web
-rm -rf package/feeds/luci/luci-app-gowebdav
-rm -rf package/feeds/luci/luci-app-iptvhelper
-rm -rf package/feeds/luci/luci-app-kodexplorer
-rm -rf package/feeds/luci/luci-app-music-remote-center
-rm -rf package/feeds/luci/luci-app-mwan3helper
-rm -rf package/feeds/luci/luci-app-nginx-pingos
-rm -rf package/feeds/luci/luci-app-ntpc
-rm -rf package/feeds/luci/luci-app-polipo
-rm -rf package/feeds/luci/luci-app-shairplay
-rm -rf package/feeds/luci/luci-app-ssr-libev-server
-rm -rf package/feeds/luci/luci-app-ssr-plus
-rm -rf package/feeds/luci/luci-app-turboacc
-rm -rf package/feeds/luci/luci-app-uugamebooster
-rm -rf package/feeds/luci/luci-app-vpn-policy-routing
-rm -rf package/feeds/luci/luci-app-vpnbypass
-rm -rf package/feeds/luci/luci-app-vssr
-rm -rf package/feeds/luci/luci-ssl-nginx
-rm -rf package/feeds/packages/uspo
+
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
