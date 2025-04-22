@@ -1,5 +1,5 @@
 #云编译公用核心
-name: WRT-CORE
+name: WRT-TEST
 
 on:
   workflow_call:
@@ -154,8 +154,8 @@ jobs:
         run: |
           cd ./wrt/package/
 
-          $GITHUB_WORKSPACE/Scripts/Packages.sh
-          $GITHUB_WORKSPACE/Scripts/Handles.sh
+          $GITHUB_WORKSPACE/Scripts/TEST/Packages.sh
+          $GITHUB_WORKSPACE/Scripts/TEST/Handles.sh
 
       - name: Custom Settings
         run: |
@@ -163,7 +163,7 @@ jobs:
 
           cat $GITHUB_WORKSPACE/Config/$WRT_CONFIG.txt $GITHUB_WORKSPACE/Config/GENERAL.txt >> .config
 
-          $GITHUB_WORKSPACE/Scripts/Settings.sh
+          $GITHUB_WORKSPACE/Scripts/TEST/Settings.sh
 
           make defconfig -j$(nproc) && make clean -j$(nproc)
 
