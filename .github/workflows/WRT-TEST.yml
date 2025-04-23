@@ -238,7 +238,5 @@ jobs:
             平台：${{env.WRT_TARGET}}
 
             登录地址：${{env.WRT_IP}}
-            
-
-            #内核版本：${{env.WRT_KVER}}
-            #插件列表：${{env.WRT_LIST}}
+            内核版本：${{env.WRT_KVER}}
+           
