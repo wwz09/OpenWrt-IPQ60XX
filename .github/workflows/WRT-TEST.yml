@@ -146,7 +146,7 @@ jobs:
       - name: Update Feeds
         run: |
           cd ./wrt/
-           # sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
+           
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
@@ -198,8 +198,7 @@ jobs:
           cd ./wrt/ && mkdir ./upload/
 
           cp -f ./.config ./upload/Config_"$WRT_CONFIG"_"$WRT_VER"_"$WRT_DATE".txt
-          # cp -f ./bin/targets/config.buildinfo ./upload/360v6.buildinfo
-
+          
           if [[ $WRT_TEST != 'true' ]]; then
             echo "WRT_KVER=$(find ./bin/targets/ -type f -name "*.manifest" -exec grep -oP '^kernel - \K[\d\.]+' {} \;)" >> $GITHUB_ENV
             echo "WRT_LIST=$(find ./bin/targets/ -type f -name "*.manifest" -exec grep -oP '^luci-(app|theme)[^ ]*' {} \; | tr '\n' ' ')" >> $GITHUB_ENV
