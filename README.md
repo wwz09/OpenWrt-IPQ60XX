@@ -10,17 +10,8 @@
 - 源码来源：[openwrt-ipq60xx](https://github.com/openwrt-dev/openwrt-ipq60xx) 感谢大佬
 - 源码来源: [ipq60xx-devel_nss](https://github.com/JiaY-shi/openwrt/tree/ipq60xx-devel_nss) 感谢大佬
 - 云编译来源：[haiibo_OpenWrt](https://github.com/haiibo/OpenWrt) 感谢大佬
-  
----
-## 固件下载 [![](https://img.shields.io/badge/-编译状态及下载链接-FFFFFF.svg)](#固件下载-)
-点击下表中 [![](https://img.shields.io/badge/下载-链接-blueviolet.svg?style=flat&logo=hack-the-box)](https://github.com/haiibo/OpenWrt/releases) 即可跳转到该设备固件下载页面
-| 平台+设备名称 | 固件编译状态 | 配置文件 | 固件下载 |
-| :-------------: | :-------------: | :-------------: | :-------------: |
-| [![](https://img.shields.io/badge/OpenWrt-IPQ6000-32C955.svg?logo=openwrt)](https://github.com/wwz09/IPQ60XX_Actions_360V6/blob/main/.github/workflows/QCA-ALL.yml) | [![](https://github.com/wwz09/IPQ60XX_Actions_360V6/actions/workflows/QCA-ALL.yml/badge.svg)](https://github.com/wwz09/IPQ60XX_Actions_360V6/actions/workflows/QCA-ALL.yml) | [![](https://img.shields.io/badge/编译-配置-orange.svg?logo=apache-spark)](https://github.com/wwz09/IPQ60XX_Actions_360V6/blob/main/configs/GENERAL.txt) | [![](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://github.com/wwz09/IPQ60XX_Actions_360V6/releases/tag/WRT-CORE.yml) |
-| [![](https://img.shields.io/badge/LEDEWRT-RAX3000M-32C955.svg?logo=OpenWrt)](https://github.com/wwz09/IPQ60XX_Actions_360V6/blob/main/.github/workflows/RAX3000M-lede-nand-YM.yml) | [![](https://github.com/wwz09/IPQ60XX_Actions_360V6/actions/workflows/RAX3000M-lede-nand-YM.yml/badge.svg)](https://github.com/wwz09/IPQ60XX_Actions_360V6/actions/workflows/RAX3000M-lede-nand-YM.yml) | [![](https://img.shields.io/badge/编译-配置-orange.svg?logo=apache-spark)](https://github.com/wwz09/IPQ60XX_Actions_360V6/blob/main/configs/RAX3000M-lede.config) | [![](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://github.com/wwz09/Openwrt_Actions_IPQ6X_798X/releases/tag/rax3000m-lede-nand-YM) |
-| [![](https://img.shields.io/badge/LEDEWRT-RAX3000M-32C955.svg?logo=OpenWrt)](https://github.com/wwz09/IPQ60XX_Actions_360V6/blob/main/.github/workflows/RAX3000M-lede-nand-BM.yml) | [![](https://github.com/wwz09/IPQ60XX_Actions_360V6/actions/workflows/RAX3000M-lede-nand-BM.yml/badge.svg)](https://github.com/wwz09/IPQ60XX_Actions_360V6/actions/workflows/RAX3000M-lede-nand-BM.yml) | [![](https://img.shields.io/badge/编译-配置-orange.svg?logo=apache-spark)](https://github.com/wwz09/IPQ60XX_Actions_360V6/blob/main/configs/RAX3000M-lede..config) | [![](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://github.com/wwz09/IPQ60XX_Actions_360V6/releases/tag/rax3000m-lede-nand-BM) |
-| [![](https://img.shields.io/badge/IMM798X-RAX3000M-32C955.svg?logo=openwrt)](https://github.com/wwz09/IPQ60XX_Actions_360V6/blob/main/.github/workflows/RAX3000M-Imm798x-nand-A.yml) | [![](https://github.com/wwz09/IPQ60XX_Actions_360V6/actions/workflows/RAX3000M-Imm798x-nand-A.yml/badge.svg)](https://github.com/wwz09/IPQ60XX_Actions_360V6/actions/workflows/RAX3000M-Imm798x-nand-A.yml) | [![](https://img.shields.io/badge/编译-配置-orange.svg?logo=apache-spark)](https://github.com/wwz09/IPQ60XX_Actions_360V6/blob/main/configs/rax3000m-Imm798x.config) | [![](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://github.com/wwz09/IPQ60XX_Actions_360V6/releases/tag/rax3000m-nand-A) |
 
+---
 ## 定制固件 [![](https://img.shields.io/badge/-项目基本编译教程-FFFFFF.svg)](#定制固件-)
 1. 首先要登录 Gihub 账号，然后 Fork 此项目到你自己的 Github 仓库
 2. 修改 `configs` 目录对应文件添加或删除插件，或者上传自己的 `xx.config` 配置文件
