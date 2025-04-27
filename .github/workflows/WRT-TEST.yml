@@ -197,18 +197,18 @@ jobs:
         run: |
           cd ./wrt/ && mkdir ./upload/
 
-          cp -f ./.config ./upload/Config_"$WRT_CONFIG"_"$WRT_VER"_"$WRT_DATE".txt
+          cp -f ./.config ./upload/Config_"$WRT_CONFIG"_"$WRT_VER".txt
           
           if [[ $WRT_TEST != 'true' ]]; then
             echo "WRT_KVER=$(find ./bin/targets/ -type f -name "*.manifest" -exec grep -oP '^kernel - \K[\d\.]+' {} \;)" >> $GITHUB_ENV
             echo "WRT_LIST=$(find ./bin/targets/ -type f -name "*.manifest" -exec grep -oP '^luci-(app|theme)[^ ]*' {} \; | tr '\n' ' ')" >> $GITHUB_ENV
 
-            find ./bin/targets/ -iregex ".*\(json\|sha256sums\|packages\|manifest\|itb\)$" -exec rm -rf {} +
+            find ./bin/targets/ -iregex ".*\(json\|sha256sums\|packages\|manifest\|itb\|txt\)$" -exec rm -rf {} +
 
             for FILE in $(find ./bin/targets/ -type f -iname "*$WRT_TARGET*") ; do
               EXT=$(basename $FILE | cut -d '.' -f 2-)
               NAME=$(basename $FILE | cut -d '.' -f 1 | grep -io "\($WRT_TARGET\).*")
-              NEW_FILE="$WRT_CONFIG"_"Qihoo_360V6_TEST"_"$WRT_DATE"."$EXT"
+              NEW_FILE="$WRT_CONFIG"_"Qihoo_360V6_TEST"."$EXT"
               mv -f $FILE ./upload/$NEW_FILE
             done
 
