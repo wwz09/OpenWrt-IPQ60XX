@@ -153,7 +153,7 @@ jobs:
         mv libwrt-qualcommax-ipq60xx-qihoo_360v6-squashfs-sysupgrade.bin IMM-${{ env.FIRMWARE_TAG }}-sysupgrade.bin
         mv -f $OPENWRT_PATH/bin/packages/*/*/*.ipk packages
         tar -zcf Packages.tar.gz packages
-        rm -rf packages feeds.buildinfo version.buildinfo
+        rm -rf packages feeds.buildinfo version.buildinfo config.buildinfo
         echo "FIRMWARE_PATH=$PWD" >> $GITHUB_ENV
 
     - name: Upload Firmware To Artifact(将固件上传到Artifact)
