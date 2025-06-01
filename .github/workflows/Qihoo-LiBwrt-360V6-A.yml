@@ -108,7 +108,7 @@ jobs:
       run: |
         chmod +x $DIY_SCRIPT
         cd $OPENWRT_PATH
-        mkdir -p openwrt/package/feeds/packages/rust/patches/
+        mkdir -p package/feeds/packages/rust/patches/
         $GITHUB_WORKSPACE/$DIY_SCRIPT
         
   
