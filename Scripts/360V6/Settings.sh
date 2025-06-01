@@ -31,14 +31,8 @@ sed -i "s/192\.168\.1\.[0-9]*/$WRT_IP/g" $CFG_FILE
 #修改默认主机名
 sed -i "s/hostname='.*'/hostname='$WRT_NAME'/g" $CFG_FILE
 
-# 找到配置文件
-CONFIG_FILE=$(find openwrt/feeds/packages/lang/rust -name "config.toml.in")
-
-# 备份原文件
-cp $CONFIG_FILE ${CONFIG_FILE}.bak
-
-# 使用sed命令修改配置
-sed -i 's/llvm.download-ci-llvm = true/llvm.download-ci-llvm = "if-unchanged"/' $CONFIG_FILE
+# 修复 rust  报错
+sed -i 's/--set=llvm\.download-ci-llvm=true/--set=llvm.download-ci-llvm=false/' feeds/packages/lang/rust/Makefile
 
 
 #配置文件修改
