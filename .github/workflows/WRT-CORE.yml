@@ -161,8 +161,7 @@ jobs:
       - name: Custom Settings
         run: |
           cd ./wrt/
-          mkdir -p package/feeds/packages/rust/patches/
-          cp $GITHUB_WORKSPACE/Scripts/patch/001-fix-ci-llvm-config.patch package/feeds/packages/rust/patches/
+          
           cat $GITHUB_WORKSPACE/Config/$WRT_CONFIG.txt $GITHUB_WORKSPACE/Config/GENERAL.txt >> .config
           $GITHUB_WORKSPACE/Scripts/360V6/Settings.sh
 
