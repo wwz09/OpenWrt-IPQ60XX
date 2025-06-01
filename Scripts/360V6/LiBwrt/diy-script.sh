@@ -26,6 +26,16 @@ elif [ -f "$WIFI_UC" ]; then
 	sed -i "s/encryption='.*'/encryption='psk2+ccmp'/g" $WIFI_UC
 fi
 
+# 找到配置文件
+CONFIG_FILE=$(find openwrt/feeds/packages/lang/rust -name "config.toml.in")
+
+# 备份原文件
+cp $CONFIG_FILE ${CONFIG_FILE}.bak
+
+# 使用sed命令修改配置
+sed -i 's/llvm.download-ci-llvm = true/llvm.download-ci-llvm = "if-unchanged"/' $CONFIG_FILE
+
+
 # 更改默认 Shell 为 zsh
 # sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 
