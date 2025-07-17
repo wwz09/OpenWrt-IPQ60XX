@@ -74,7 +74,7 @@ jobs:
         echo "OPENWRT_PATH=$PWD" >> $GITHUB_ENV
         VERSION_INFO=$(git show -s --date=short --format="作者: %an<br/>时间: %cd<br/>内容: %s<br/>hash: %H")
         echo "VERSION_INFO=$VERSION_INFO" >> $GITHUB_ENV
-        VERSION_KERNEL=$(grep -oP 'LINUX_KERNEL_HASH-\K[0-9]+\.[0-9]+\.[0-9]+' include/kernel-6.12)
+        VERSION_KERNEL=$(grep -oP 'LINUX_KERNEL_HASH-\K[0-9]+\.[0-9]+\.[0-9]+' target/linux/generic/kernel-6.12)
         echo "VERSION_KERNEL=$VERSION_KERNEL" >> $GITHUB_ENV
 
     - name: Generate Variables(生成变量)
@@ -101,7 +101,10 @@ jobs:
       run: |
         cd $OPENWRT_PATH
         ./scripts/feeds update -a
-        
+        git clone --depth 1 https://github.com/sbwml/openwrt_pkgs.git package/new/custom
+        mv package/new/custom/luci-app-netspeedtest  package/new
+        mv package/new/custom/speedtest-cli package/new
+        rm -rf package/new/custom
         ./scripts/feeds install -a
 
     - name: DIY执行脚本
