@@ -129,7 +129,7 @@ jobs:
         cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_SCRIPT
 
-     - name: Download DL Package(下载DL软件包)
+    - name: Download DL Package(下载DL软件包)
       run: |
         cd $OPENWRT_PATH
         make defconfig
