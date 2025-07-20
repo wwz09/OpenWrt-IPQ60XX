@@ -1,19 +1,13 @@
 name: Qihoo-LiBwrt-360V6-A
 
 on:
- #自动编译：当Auto-Clean运行完成后
-  workflow_run:
-    workflows: ["Auto-Clean"]
-    types:
-      - completed
   workflow_dispatch:
   workflow_call:
   # schedule:
-    # - cron: 0 19 * * *
+  #   - cron: 0 20 * * *
 
 env:
   REPO_URL: https://github.com/laipeng668/openwrt-6.x.git
- # REPO_URL: https://github.com/wwz09/Qihoo-6.x
   REPO_BRANCH: k6.12-nss
   CONFIG_FILE: Config/IPQ60XX.config
   GENERAL_CONFIG_FILE: Config/General.config
@@ -43,7 +37,7 @@ jobs:
         echo -e "$(sudo lshw -short -C memory | grep GiB) \n"
         echo "--------------------------硬盘信息--------------------------"
         echo "硬盘数量：$(ls /dev/sd* | grep -v [1-9] | wc -l)" && df -hT
-        
+
     - name: Maximize Available Disk Space(最大化可用磁盘空间​)
       if: env.MADS == 'true'
       uses: AdityaGarg8/remove-unwanted-software@master
@@ -67,7 +61,6 @@ jobs:
         sudo -E apt-get -y autoremove --purge
         sudo -E apt-get -y clean
         sudo timedatectl set-timezone "$TZ"
-
 
     - name: Checkout(检出代码)
       uses: actions/checkout@main
@@ -162,16 +155,11 @@ jobs:
       if: steps.compile.outputs.status == 'success'
       run: |
         cd $OPENWRT_PATH/bin/targets/*/*
-        rm -rf sha256sums
-        rm -rf profiles.json
-        cp $OPENWRT_PATH/.config build.config
-        mv config.buildinfo Qihoo360V6.buildinfo
-        rm -rf libwrt-qualcommax-ipq60xx.manifest
-        mv libwrt-qualcommax-ipq60xx-qihoo_360v6-squashfs-factory.ubi IMM-${{ env.FIRMWARE_TAG }}-factory.ubi
-        mv libwrt-qualcommax-ipq60xx-qihoo_360v6-squashfs-sysupgrade.bin IMM-${{ env.FIRMWARE_TAG }}-sysupgrade.bin
-        mv -f $OPENWRT_PATH/bin/packages/*/*/*.ipk packages
-        tar -zcf Packages.tar.gz packages
-        rm -rf packages feeds.buildinfo version.buildinfo config.buildinfo
+        cp $OPENWRT_PATH/.config ipq60xx.config
+        mv config.buildinfo ipq60xx.config.buildinfo
+        mv -f $OPENWRT_PATH/bin/packages/*/*/*.apk packages
+        tar -zcf ipq60xx.Packages.tar.gz packages
+        rm -rf packages feeds.buildinfo version.buildinfo sha256sums profiles.json
         echo "FIRMWARE_PATH=$PWD" >> $GITHUB_ENV
 
     - name: Upload Firmware To Artifact(将固件上传到Artifact)
@@ -192,17 +180,20 @@ jobs:
         artifacts: ${{ env.FIRMWARE_PATH }}/*
         body: |
           **This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}**
-          ### 📒 版本24.10固件
-          - 这是带WIFI，带NSS的6.12内核固件
+          ### 📒 固件信息
+          - 这是开启全功能NSS的6.12内核固件，默认主题为Argon；该固件在ImmortalWrt的基础上，添加了额外的软件包cpufreq、ddns、ttyd、upnp、wolplus、samba4、vlmcsd、aria2、autoreboot、uhttpd、wifischedule、frps、frpc、diskman、hd-idle、banip、acme、arpbind、usb-printer、homeproxy、adguardhome、oaf、sqm、wireguard、watchcat、3cat，并添加了若干工具，具体详见IPQ60XX.config。
           - 💻 这是 ${{ env.FIRMWARE_TAG }} 平台使用的 OpenWrt 固件
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
-          - 🌐 默认地址: 192.168.2.1
-          - 🔑 默认密码: password
+          - 🌐 默认地址: **192.168.2.1**
+          - 🔑 默认密码: none
+          - 🚀 WiFi名称: **LibWrt**
+          - 🔑 WiFi密码: 12345678
           ### 🧊 固件版本
+          - 固件内核版本：**${{ env.VERSION_KERNEL }}**
           - 固件编译前最后一次➦[主源码](${{ env.REPO_URL }})更新记录
           - ${{ env.VERSION_INFO }}
-          
+
     - name: Delete Old Cache(删除旧缓存)
       run: |
         # 获取缓存列表并删除
