@@ -62,6 +62,7 @@ git clone --depth=1 https://github.com/NONGFAH/luci-app-athena-led package/luci-
 chmod +x package/luci-app-athena-led/root/etc/init.d/athena_led package/luci-app-athena-led/root/usr/sbin/athena-led
 
 # 修复luci-app-store的版本号
-sed -i 's/PKG_VERSION:=\(.*\)-r\([0-9]*\)/PKG_VERSION:=\1\nPKG_RELEASE:=\2/g' package/luci-app-store/Makefile
+CFLAGS="-DBISON_LOCALEDIR=\"/usr/share/locale\""
+# sed -i 's/PKG_VERSION:=\(.*\)-r\([0-9]*\)/PKG_VERSION:=\1\nPKG_RELEASE:=\2/g' package/luci-app-store/Makefile
 ./scripts/feeds update -a
 ./scripts/feeds install -a
