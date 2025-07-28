@@ -60,9 +60,9 @@ function git_sparse_clone() {
 
 ## 添加额外插件
 
-git_sparse_clone main https://github.com/mzwrt/mzwrt_package_Lite  luci-app-ikoolproxy luci-app-store luci-app-quickstart luci-app-openclash luci-app-easymesh luci-app-ddnsto  luci-theme-argon luci-theme-design luci-app-design-config luci-app-argon-config luci-app-lucky luci-app-smartdns luci-lib-xterm luci-lib-taskd luci-lib-iform
+git_sparse_clone IMM https://github.com/wwz09/IPQ_package  luci-app-ikoolproxy  luci-app-easymesh luci-app-ddnsto  luci-theme-argon luci-app-argon-config luci-app-lucky  luci-lib-xterm luci-lib-taskd luci-lib-iform
 
-git_sparse_clone main https://github.com/mzwrt/mzwrt_package_Lite  quickstart ucl upx taskd ddnsto filebrowser lua-maxminddb  smartdns upx-static docker lucky luci-app-homeproxy vlmcsd
+git_sparse_clone IMM https://github.com/wwz09/IPQ_package  ucl upx taskd ddnsto  lua-maxminddb  smartdns upx-static docker lucky vlmcsd sing-box 
 
 git_sparse_clone IMM https://github.com/wwz09/LEDE-IMM-package luci-app-control-timewol luci-app-control-webrestriction luci-app-control-weburl luci-app-timecontrol luci-app-parentcontrol relevance
 
@@ -96,5 +96,5 @@ rm -rf package/new/chenmozhijin-socat
 #rm -rf package/new/openwrt-adguardhome
 
 # 加入OpenClash核心
-chmod -R a+x $GITHUB_WORKSPACE/Scripts/RAX3000M/mwrt/preset-clash-core.sh
-$GITHUB_WORKSPACE/Scripts/RAX3000M/mwrt/preset-clash-core.sh
+# chmod -R a+x $GITHUB_WORKSPACE/scripts/RAX3000M/mwrt/preset-clash-core.sh
+# $GITHUB_WORKSPACE/scripts/RAX3000M/mwrt/preset-clash-core.sh

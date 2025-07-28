@@ -90,7 +90,7 @@ rm -rf package/new/chenmozhijin-socat
 #rm -rf package/new/openwrt-adguardhome
 
 # 加入OpenClash核心
-chmod -R a+x $GITHUB_WORKSPACE/Scripts/RAX3000M/mwrt/preset-clash-core.sh
-$GITHUB_WORKSPACE/Scripts/RAX3000M/mwrt/preset-clash-core.sh
+chmod -R a+x $GITHUB_WORKSPACE/scripts/RAX3000M/mwrt/preset-clash-core.sh
+$GITHUB_WORKSPACE/scripts/RAX3000M/mwrt/preset-clash-core.sh
 
 
