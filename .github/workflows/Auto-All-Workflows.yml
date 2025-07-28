@@ -1,0 +1,32 @@
+name: Auto-All-Workflows  # 主要工作流的名称
+
+on:
+  workflow_dispatch:  # 手动触发：通过 GitHub UI 来触发
+  schedule:
+    - cron: 0 20 * * 5  # 北京时间星期六凌晨4点，定时触发
+
+jobs:
+
+    IPQ60XX-LibWrt:
+      uses: ./.github/workflows/LibWrt-Qihoo-360V6.yml
+      
+    rax3000m-ImmortalWrt-A:
+      uses: ./.github/workflows/RAX3000M-Imm798x-nand-A.yml
+
+    rax3000m-ImmortalWrt-B:
+      uses: ./.github/workflows/RAX3000M-Imm798x-nand-B.yml
+
+    rax3000m-LEDE-A:
+      uses: ./.github/workflows/RAX3000M-lede-nand-YM.yml
+
+    rax3000m-LEDE-B:
+      uses: ./.github/workflows/RAX3000M-lede-nand-BM.yml
+
+    VIKINGYFY-Qihoo-360V6:
+      uses: ./.github/workflows/VIKINGYFY-Qihoo-360V6.yml
+   
+    IMM-MT798X:
+      uses: ./.github/workflows/IMM-MT798X.yml
+
+    All-Clean:
+      uses: ./.github/workflows/All-Clean.yml
