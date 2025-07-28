@@ -17,7 +17,7 @@ env:
   MADS: false
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: MT798X-A
+  FIRMWARE_TAG: IMMWrt-MT798X
   TZ: Asia/Shanghai
 
 jobs:
