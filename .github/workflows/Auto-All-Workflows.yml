@@ -7,8 +7,8 @@ on:
 
 jobs:
 
-    IPQ60XX-LibWrt:
-      uses: ./.github/workflows/LibWrt-Qihoo-360V6.yml
+    LibWrt-Qihoo-360V6:
+      uses: ./.github/workflows/LiBwrt-Qihoo-360V6.yml
       
     rax3000m-ImmortalWrt-A:
       uses: ./.github/workflows/RAX3000M-Imm798x-nand-A.yml
@@ -22,11 +22,11 @@ jobs:
     rax3000m-LEDE-B:
       uses: ./.github/workflows/RAX3000M-lede-nand-BM.yml
 
-    VIKINGYFY-Qihoo-360V6:
-      uses: ./.github/workflows/VIKINGYFY-Qihoo-360V6.yml
+    Laipeng-Qihoo-360V6:
+      uses: ./.github/workflows/Laipeng-Qihoo-360V6.yml
    
-    IMMWrt-MT798X:
-      uses: ./.github/workflows/IMMWrt-MT798X.yml
+    RAX3000M-ImmortalWrt:
+      uses: ./.github/workflows/RAX3000M-ImmortalWrt.yml
 
     All-Clean:
       uses: ./.github/workflows/All-Clean.yml
