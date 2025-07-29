@@ -1,4 +1,4 @@
-name: LiBwrt-Qihoo-360V6
+name: LibWrt-Qihoo-360V6
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
   #   - cron: 0 20 * * *
 
 env:
-  REPO_URL: https://github.com/LiBwrt/openwrt-6.x.git
+  REPO_URL: https://github.com/laipeng668/openwrt-6.x.git
   REPO_BRANCH: k6.12-nss
   CONFIG_FILE: configs/IPQ60XX.config
   GENERAL_CONFIG_FILE: configs/General.config
@@ -16,7 +16,7 @@ env:
   MADS: false
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: LiBwrt-IPQ60XX
+  FIRMWARE_TAG: IPQ60XX
   TZ: Asia/Shanghai
 
 jobs:
@@ -55,13 +55,7 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        sudo -E apt -yqq purge firefox
-        sudo -E apt -yqq update
-        sudo -E apt -yqq full-upgrade
-        sudo -E apt -yqq autoremove --purge
-        sudo -E apt -yqq autoclean
-        sudo -E apt -yqq clean
-        sudo -E apt -yqq install dos2unix python3-netifaces libfuse-dev
+        sudo -E apt-get -y update
         sudo bash -c 'bash <(curl -sL https://build-scripts.immortalwrt.org/init_build_environment.sh)'
         sudo -E systemctl daemon-reload
         sudo -E apt-get -y autoremove --purge
@@ -192,11 +186,14 @@ jobs:
         body: |
           **This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}**
           ### 📒 固件信息
-          - 这是开启全功能NSS的6.12内核固件，默认主题为Argon；该固件在ImmortalWrt的基础上编译
+          - 这是开启全功能NSS的6.12内核固件，默认主题为Argon；该固件在ImmortalWrt的基础上编译。
           - 💻 这是 ${{ env.FIRMWARE_TAG }} 平台使用的 OpenWrt 固件
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
           - 🌐 默认地址: **192.168.2.1**
+          - 🔑 默认密码:
+          - 🚀 WiFi名称:
+          - 🔑 WiFi密码:
           ### 🧊 固件版本
           - 固件内核版本：**${{ env.VERSION_KERNEL }}**
           - 固件编译前最后一次➦[主源码](${{ env.REPO_URL }})更新记录
