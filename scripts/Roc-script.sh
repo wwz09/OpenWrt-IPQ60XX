@@ -51,7 +51,7 @@ function git_sparse_clone() {
 
 # OpenList & AdGuardHome & WolPlus & Lucky & OpenAppFilter & 集客无线AC控制器 & 雅典娜LED控制
 
-git_sparse_clone IMM https://github.com/wwz09/IPQ_package luci-app-quickstart quickstart luci-app-control-weburl luci-app-control-timewol luci-app-parentcontrol luci-app-socat
+git_sparse_clone IMM https://github.com/wwz09/IPQ_package  luci-app-control-weburl luci-app-control-timewol luci-app-parentcontrol luci-app-socat
 git clone --depth=1 https://github.com/sbwml/luci-app-openlist2 package/openlist
 git_sparse_clone master https://github.com/kenzok8/openwrt-packages adguardhome luci-app-adguardhome 
 git_sparse_clone main https://github.com/VIKINGYFY/packages luci-app-wolplus
@@ -62,7 +62,6 @@ git clone --depth=1 https://github.com/NONGFAH/luci-app-athena-led package/luci-
 chmod +x package/luci-app-athena-led/root/etc/init.d/athena_led package/luci-app-athena-led/root/usr/sbin/athena-led
 
 # 修复luci-app-store的版本号
-CFLAGS="-DBISON_LOCALEDIR=\"/usr/share/locale\""
 # sed -i 's/PKG_VERSION:=\(.*\)-r\([0-9]*\)/PKG_VERSION:=\1\nPKG_RELEASE:=\2/g' package/luci-app-store/Makefile
 ./scripts/feeds update -a
 ./scripts/feeds install -a
