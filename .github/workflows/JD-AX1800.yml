@@ -145,13 +145,13 @@ jobs:
         cp $OPENWRT_PATH/.config build.config
         rm -rf sha256sums
         rm -rf profiles.json
-        rm -rf openwrt-mediatek-filogic-cmcc_rax3000m-nand-initramfs-kernel.bin
-        rm -rf openwrt-mediatek-filogic-cmcc_rax3000m-nand.manifest
-        mv config.buildinfo rax3000m.buildinfo
-        mv openwrt-mediatek-filogic-cmcc_rax3000m-nand-squashfs-sysupgrade.bin ${{ env.FIRMWARE_TAG }}-squashfs-sysupgrade.bin
-        mv openwrt-mediatek-filogic-cmcc_rax3000m-nand-squashfs-factory.bin ${{ env.FIRMWARE_TAG }}-squashfs-factory.bin
-        #mv -f $OPENWRT_PATH/bin/packages/*/*/*.ipk packages
-        #tar -zcf Packages.tar.gz packages
+        # rm -rf openwrt-mediatek-filogic-cmcc_rax3000m-nand-initramfs-kernel.bin
+        # rm -rf openwrt-mediatek-filogic-cmcc_rax3000m-nand.manifest
+        mv config.buildinfo JDAX1800.buildinfo
+        # mv openwrt-mediatek-filogic-cmcc_rax3000m-nand-squashfs-sysupgrade.bin ${{ env.FIRMWARE_TAG }}-squashfs-sysupgrade.bin
+        # mv openwrt-mediatek-filogic-cmcc_rax3000m-nand-squashfs-factory.bin ${{ env.FIRMWARE_TAG }}-squashfs-factory.bin
+        mv -f $OPENWRT_PATH/bin/packages/*/*/*.ipk packages
+        tar -zcf Packages.tar.gz packages
         rm -rf packages feeds.buildinfo version.buildinfo
         echo "FIRMWARE_PATH=$PWD" >> $GITHUB_ENV
         
@@ -181,3 +181,4 @@ jobs:
           - 🌐 默认地址: 192.168.3.1
           - 🔑 默认密码: password
          
+
